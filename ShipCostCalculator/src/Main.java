@@ -36,6 +36,13 @@ public class Main {
         String purchasingYN;
         do
         { System.out.println("What is the cost of the item being purchased?");
+            if (in.hasNextInt()){
+            }
+            else {
+                String trash = in.nextLine();
+                System.out.println("Error, you entered: " + trash + "\nPlease try again and enter a number.");
+                System.exit(0);
+            }
             itemCost = in.nextInt();
             totalCost += itemCost;
             System.out.println("Are you done purchasing? [Y/N]");
@@ -44,7 +51,6 @@ public class Main {
             if (!purchasingYN.equalsIgnoreCase  ("y")&&!purchasingYN.equalsIgnoreCase  ("n"))
                 System.out.println("You entered: " + purchasingYN + "\nPlease enter Y or N");
         } while (!purchasingYN.equalsIgnoreCase("y"));
-
         if (totalCost >= FREE_SHIPPING) {
             System.out.print("Hooray! There is no shipping cost on this purchase, your price will be $" + totalCost);
         }
