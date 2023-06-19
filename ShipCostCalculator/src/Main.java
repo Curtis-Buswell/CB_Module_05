@@ -37,18 +37,20 @@ public class Main {
         do
         { System.out.println("What is the cost of the item being purchased?");
             itemCost = in.nextInt();
-            totalCost = totalCost + itemCost;
+            totalCost += itemCost;
             System.out.println("Are you done purchasing? [Y/N]");
-            purchasingYN = in.nextLine();
             in.nextLine();
-        } while (purchasingYN.equals("!Y"));
+            purchasingYN = in.nextLine();
+            if (!purchasingYN.equalsIgnoreCase  ("y")&&!purchasingYN.equalsIgnoreCase  ("n"))
+                System.out.println("You entered: " + purchasingYN + "\nPlease enter Y or N");
+        } while (!purchasingYN.equalsIgnoreCase("y"));
 
         if (totalCost >= FREE_SHIPPING) {
-            System.out.print("Hooray! There is no shipping cost on this purchase, your price will remain $" + itemCost);
+            System.out.print("Hooray! There is no shipping cost on this purchase, your price will be $" + totalCost);
         }
         else {
             shippingCost = (totalCost*1.02 - totalCost);
-            System.out.print("The 2% shipping price will be $" + shippingCost + ", bringing the total from $" + totalCost + " to $" + totalCost);
+            System.out.print("The 2% shipping price will be $" + shippingCost + ", bringing your total from $" + totalCost + " to $" + (totalCost + shippingCost));
         }
 
     }
