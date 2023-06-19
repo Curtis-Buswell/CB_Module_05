@@ -36,8 +36,7 @@ public class Main {
         String purchasingYN;
         do
         { System.out.println("What is the cost of the item being purchased?");
-            if (in.hasNextInt()){
-            }
+            if (in.hasNextInt()){}//code just continues since there is no error
             else {
                 String trash = in.nextLine();
                 System.out.println("Error, you entered: " + trash + "\nPlease try again and enter a number.");
@@ -55,7 +54,7 @@ public class Main {
             System.out.print("Hooray! There is no shipping cost on this purchase, your price will be $" + totalCost);
         }
         else {
-            shippingCost = (totalCost*1.02 - totalCost);
+            shippingCost = (totalCost * 1.02 - totalCost);
             System.out.print("The 2% shipping price will be $" + shippingCost + ", bringing your total from $" + totalCost + " to $" + (totalCost + shippingCost));
         }
 
