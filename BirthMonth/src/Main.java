@@ -22,7 +22,7 @@ public class Main {
         }
         birthMonth = in.nextInt();
         if (birthMonth >= 12 || birthMonth <= 0)
-            System.out.println("You entered an incorrect month value:" + birthMonth + "\nPlease restart the program and try again.");
+            System.out.println("You entered an incorrect month value: " + birthMonth + "\nPlease restart the program and try again.");
         else
             System.out.println("Your birth month is: " + birthMonth);
     }
